@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ( < IE10 ) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <!-- 사이트 기본설정 영역 START -->
+    <!-- SEO -->
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <!-- 최대 155자 이내 -->
+    <meta name="Robots" content="index, follow" />
+    <!-- 검색 제외 페이지인 경우 noindex, nofollow -->
+
+    <!-- 대표 이미지 -->
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- 파비콘 -->
+    <link rel="canonical" href="/images/favicon.ico" />
+    <!-- 대표 URL -->
+
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="/fonts/icons/xeicon/xeicon.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/common.css?v=1.0" />
+    <link rel="stylesheet" href="/css/sub.css?v=1.0" />
+    <link rel="stylesheet" href="/css/breakpoint.css?v=1.0" />
+
+    <!-- Load jQuery -->
+    <script src="/js/lib/jquery-1.7.1.min.js"></script>
+    <script src="/js/include-html.js" defer></script>
+    <!-- Console 화면 노출  -->
+    <title>넥스트레이드 | 거래참가 증권사</title>
+    <!--nav depth 활성화-->
+    <script>
+        var P_dp1 = 2; /*depth1*/
+        var P_dp2 = 3; /*depth2*/
+    </script>
+</head>
+<body class="sub-body gradient bg2">
+    <!-- S : 헤더-->
+    <div include-html="/include/header.html"></div>
+    <!-- E : 헤더-->
+    <!-- S : 서브 비주얼-->
+    <div include-html="/include/sub-visual.html"></div>
+    <!-- E : 서브 비주얼-->
+    <!-- S : 메인-->
+    <main id="contents">
+        <!-- S : Identify-->
+        <section class="section section-stock">
+            <div class="container">
+                <div class="sec-tit">
+                    <h2 class="tit wow fadeInUp">거래참가 증권사</h2>
+                    <p class="txt wow fadeInUp" data-wow-delay="0.1s">내 증권계좌가 NXT시장에서 거래할 수 있는 계좌인지 확인해보세요</p>
+                </div>
+                <!-- S : 증권사 리스트-->
+                <ul class="list-bx"></ul>
+                <!-- E : 증권사 리스트-->
+            </div>
+            <div class="marquee">
+                <div class="marquee-item">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                    <img src="/images/sub/market/nxt_txt.png" alt="nextrade">
+                </div>
+            </div>
+        </section>
+        <!-- E : Identify-->
+    </main>
+    <!-- E : 메인-->
+    <!-- S : 푸터-->
+    <div include-html="/include/footer.html"></div>
+    <!-- E : 푸터-->
+
+    <script src="/js/lib/wow.min.js"></script>
+    <script src="/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="/js/lib/swiper.min.js"></script>
+    <script src="/js/lib/jquery.scrollbar.min.js"></script>
+    
+    <!-- 부드러운 스크롤 사용시 주석 해제 -->
+    <script src="/js/lib/SmoothScroll.js"></script>
+    
+    <!-- COMMON -->
+    <script src="/js/common.js"></script>
+    <script>
+        $(document).ready(function(){
+            const stockList = ["BNK", "DB", "IBK", "KB", "NH투자", "SK", "교보", "미래에셋", "신한투자", "삼성", "상상인", "이베스트", "유안타증권", "키움증권", "한국투자", "하나", "하이투자", "한화"];
+
+            stockList.forEach(function(text, index) {
+                const imagePath = '/images/sub/market/stock_firm_' + (index + 1) + '.png';
+                const listItem = '<li class="wow fadeInUp">' +
+                    '<img src="' + imagePath + '" alt="' + text + '" />' +
+                    '<p>' + text + '</p>' +
+                    '</li>';
+                $('.section-stock .list-bx').append(listItem);
+            });
+            function startMarquee() {
+              var marqueeItem = $('.marquee-item');
+                var marqueeWidth = 0;
+
+                // 각 이미지의 너비를 더해서 marquee-item의 전체 너비를 계산
+                marqueeItem.children('img').each(function() {
+                    marqueeWidth += $(this).outerWidth(true); // true로 설정하여 margin 포함
+                });
+
+                // marquee-item의 너비를 설정
+                marqueeItem.css('width', marqueeWidth);
+
+                // 애니메이션 시작
+                function animateMarquee() {
+                    marqueeItem.animate({left: -marqueeWidth}, marqueeWidth * 20, 'linear', function() {
+                        $(this).css('left', '100%'); // 애니메이션이 끝나면 다시 처음으로 이동
+                        animateMarquee(); // 다시 시작
+                    });
+                }
+
+                animateMarquee();
+            }
+
+            startMarquee();
+        });
+    </script>
+</body>
+</html>

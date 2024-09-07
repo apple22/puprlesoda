@@ -1,0 +1,60 @@
+<div class="popup">
+    <div class="popup-tit">
+        <!-- S : 팝업 제목-->
+        <p class="tit">문의하기</p>
+        <!-- E : 팝업 제목-->
+        <!-- S : 팝업 닫기 버튼-->
+        <button type="button" class="mfp-close" onclick="$.magnificPopup.close();">
+            <img src="/images/icon/popup_close.svg" alt="닫기">
+        </button>
+        <!-- E : 팝업 닫기 버튼-->
+    </div>
+    <div class="popup-body">
+        <form action="" method="GET">
+            <div class="form-wrap">
+                <ul class="form-list">
+                    <!-- S : 문의내용-->
+                    <li>
+                        <div class="tit required">
+                            <strong>문의내용</strong>
+                        </div>
+                        <div class="input-bx">
+                            <textarea cols="10" rows="10" maxlength="1000" name="content" placeholder="문의내용을 입력 해 주세요." required></textarea>
+                        </div>
+                    </li>
+                    <!-- E : 문의내용-->
+                    <!-- S : 답변 받을 이메일-->
+                    <li>
+                        <div class="tit required">
+                            <strong>답변 받을 이메일</strong>
+                        </div>
+                        <div class="input-bx">
+                            <input type="email" name="userEmail" placeholder="이메일 주소를 입력해주세요. (필수)" maxlength="80" required class="w-100">
+                        </div>
+                    </li>
+                    <!-- E : 답변 받을 이메일-->
+                </ul>
+                <!-- S : 개인정보처리방침 동의여부-->
+                <div class="term-chk">
+                    <label class="chk-btn">
+                        <input type="checkbox" required>
+                        <p><strong>개인정보처리방침</strong>에 동의합니다.</p>
+                    </label>
+                    <div class="term-txt-bx mt-2">
+                        <div class="inner">
+                            <p>
+                                주식회사 넥스트레이드(이하 ‘회사’)은 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인 정보 처리방침을 수립·공개합니다. 제1조(개인정보의 처리목적)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- E : 개인정보처리방침 동의여부-->
+                <div class="btn-bx">
+                    <button type="submit" class="btn-type-01">
+                        보내기
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>  
