@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ( < IE10 ) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <!-- 사이트 기본설정 영역 START -->
+    <!-- SEO -->
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <!-- 최대 155자 이내 -->
+    <meta name="Robots" content="index, follow" />
+    <!-- 검색 제외 페이지인 경우 noindex, nofollow -->
+
+    <!-- 대표 이미지 -->
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- 파비콘 -->
+    <link rel="canonical" href="/images/favicon.ico" />
+    <!-- 대표 URL -->
+
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="/fonts/icons/xeicon/xeicon.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/common.css?v=1.0" />
+    <link rel="stylesheet" href="/css/sub.css?v=1.0" />
+    <link rel="stylesheet" href="/css/breakpoint.css?v=1.0" />
+
+    <!-- Load jQuery -->
+    <script src="/js/lib/jquery-1.7.1.min.js"></script>
+    <script src="/js/include-html.js" defer></script>
+    <!-- Console 화면 노출  -->
+    <title>넥스트레이드 | 오시는 길</title>
+    <!--nav depth 활성화-->
+    <script>
+        var P_dp1 = null; /*depth1*/
+        var P_dp2 = null; /*depth2*/
+    </script>
+</head>
+<body class="sub-body sub-login">
+    <!-- S : 헤더-->
+    <div include-html="/include/header.html"></div>
+    <!-- E : 헤더-->
+    <!-- S : 메인-->
+    <main id="contents">
+        <section class="section section-login wow fadeIn">
+            <div class="container">
+                <div class="inner justify-content-center align-items-center pt-0">
+                    <!-- S : 입력란-->
+                    <div class="form-wrap wow fadeInUp">
+                        <form action="/html/menu19.html">
+                            <div class="form-bx">
+                                <h2 class="tit">
+                                    개인정보 보호를 위해 <br>
+                                    비밀번호를 변경해 주세요.
+                                </h2>
+                                <!-- S : 입력 폼-->
+                                <ul class="form-list">
+                                    <li>
+                                        <label>
+                                            <span class="tit">현재 비밀번호</span>
+                                            <div class="input-bx">
+                                                <input class="password current-password" type="password" name="currentPw" minlength="8" maxlength="16" placeholder="현재 비밀번호 입력" required>
+                                            </div>
+                                            <p class="error-txt">비밀번호가 옳바르지 않습니다.</p>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <span class="tit">새 비밀번호</span>
+                                            <div class="input-bx">
+                                                <input class="password new-password" type="password" name="newPw" minlength="8" maxlength="16" placeholder="새 비밀번호(영문,숫자,특수문자 조합 8~16자리)" required>
+                                                <button type="button" class="change-type"></button>
+                                            </div>
+                                            <p class="error-txt">입력형식이 올바르지 않습니다. (영문,숫자,특수문자, 조합 8~16자리)</p>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <span class="tit">새 비밀번호 확인</span>
+                                            <div class="input-bx">
+                                                <input class="password new-password-confirm" type="password" name="newPw" minlength="8" maxlength="16" placeholder="새 비밀번호(영문,숫자,특수문자 조합 8~16자리)" required>
+                                                <button type="button" class="change-type"></button>
+                                            </div>
+                                            <p class="error-txt">비밀번호가 동일하지 않습니다.</p>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <!-- E : 입력 폼-->
+                                <div class="btn-wrap">
+                                    <button type="submit" class="submit-btn btn  btn-red" disabled>비밀번호 변경</button>
+                                    <button type="button" class="btn btn-purple">다음에 변경</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- E : 입력란-->
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- E : 메인-->
+
+    <script src="/js/lib/wow.min.js"></script>
+    <script src="/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="/js/lib/swiper.min.js"></script>
+    <script src="/js/lib/jquery.scrollbar.min.js"></script>
+    
+    <!-- 부드러운 스크롤 사용시 주석 해제 -->
+    <script src="/js/lib/SmoothScroll.js"></script>
+    
+    <!-- COMMON -->
+    <script src="/js/common.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('.logout').hide();
+            },100)
+
+            // 비밀번호 타입 변경 (보이기/숨기기 버튼)
+            $('.change-type').on('click', function() {
+                var input = $(this).siblings('input');
+                if (input.prop('type') === 'password') {
+                    input.prop('type', 'text');
+                } else {
+                    input.prop('type', 'password');
+                }
+            });
+
+            // 모든 비밀번호 입력 확인 후 비밀번호 변경 버튼 활성화
+            $('.password').on('input', function() {
+                toggleSubmitButton();
+                removeError($(this));  // 값 입력 시 에러 제거
+            });
+
+            // 제출 버튼 클릭 시 조건 확인
+            $('.submit-btn').on('click', function(event) {
+                var isValid = true;
+
+                // 현재 비밀번호 검증
+                var currentPwElement = $('.current-password');
+                if (!currentPwElement[0].checkValidity()) {
+                    showError(currentPwElement);
+                    isValid = false;
+                }
+
+                // 새 비밀번호 검증
+                var newPwElement = $('.new-password');
+                var newPwConfirmElement = $('.new-password-confirm');
+                var newPassword = newPwElement.val();
+                var hasAlphabet = /[A-Za-z]/.test(newPassword);
+                var hasNumber = /\d/.test(newPassword);
+                var hasSpecialChar = /[!@#$%^&*]/.test(newPassword);
+                var isLengthValid = newPassword.length >= 8 && newPassword.length <= 16;
+
+                if (!isLengthValid || !hasAlphabet || !hasNumber || !hasSpecialChar) {
+                    showError(newPwElement);
+                    isValid = false;
+                }
+
+                // 새 비밀번호 확인 검증
+                if (newPassword !== newPwConfirmElement.val()) {
+                    showError(newPwConfirmElement);
+                    isValid = false;
+                }
+
+                // 조건이 만족되지 않으면 폼 전송 방지
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            // 비밀번호 입력 확인 후 버튼 활성화/비활성화
+            function toggleSubmitButton() {
+                var currentPw = $('.current-password').val();
+                var newPw = $('.new-password').val();
+                var newPwConfirm = $('.new-password-confirm').val();
+
+                // 모든 비밀번호 필드가 채워져 있을 때만 버튼 활성화
+                if (currentPw.length > 0 && newPw.length > 0 && newPwConfirm.length > 0) {
+                    $('.submit-btn').prop('disabled', false);  // 활성화
+                } else {
+                    $('.submit-btn').prop('disabled', true);  // 비활성화
+                }
+            }
+
+            // 에러 메시지 및 invalid 클래스 추가
+            function showError(element) {
+                element.addClass('invalid');  // 입력 필드에 invalid 클래스 추가
+                element.closest('label').find('.error-txt').show();  // 에러 메시지 표시
+            }
+
+            // 에러 메시지 및 invalid 클래스 제거
+            function removeError(element) {
+                element.removeClass('invalid');  // 입력 필드에서 invalid 클래스 제거
+                element.closest('label').find('.error-txt').hide();  // 에러 메시지 숨기기
+            }
+        });
+    </script>
+</body>
+</html>

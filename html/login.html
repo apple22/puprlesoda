@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <!-- ( < IE10 ) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <!-- 사이트 기본설정 영역 START -->
+    <!-- SEO -->
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <!-- 최대 155자 이내 -->
+    <meta name="Robots" content="index, follow" />
+    <!-- 검색 제외 페이지인 경우 noindex, nofollow -->
+
+    <!-- 대표 이미지 -->
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- 파비콘 -->
+    <link rel="canonical" href="/images/favicon.ico" />
+    <!-- 대표 URL -->
+
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="/fonts/icons/xeicon/xeicon.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/common.css?v=1.0" />
+    <link rel="stylesheet" href="/css/sub.css?v=1.0" />
+    <link rel="stylesheet" href="/css/breakpoint.css?v=1.0" />
+
+    <!-- Load jQuery -->
+    <script src="/js/lib/jquery-1.7.1.min.js"></script>
+    <script src="/js/include-html.js" defer></script>
+    <!-- Console 화면 노출  -->
+    <title>넥스트레이드 | 오시는 길</title>
+    <!--nav depth 활성화-->
+    <script>
+        var P_dp1 = null; /*depth1*/
+        var P_dp2 = null; /*depth2*/
+    </script>
+</head>
+<body class="sub-body sub-login">
+    <!-- S : 헤더-->
+    <div include-html="/include/header.html"></div>
+    <!-- E : 헤더-->
+    <!-- S : 메인-->
+    <main id="contents">
+        <section class="section section-login wow fadeIn">
+            <div class="container">
+                <div class="inner">
+                    <!-- S : 로그인 입력란-->
+                    <div class="form-wrap wow fadeInUp">
+                        <form action="/html/menu19.html">
+                            <div class="form-bx">
+                                <h2 class="tit">
+                                    넥스트레이드 회원사 업무포털 로그인
+                                </h2>
+                                <!-- S : 입력 폼-->
+                                <ul class="form-list">
+                                    <li>
+                                        <label>
+                                            <span class="tit">아이디</span>
+                                            <div class="input-bx">
+                                                <input class="user-id" type="email" name="userId" placeholder="이메일 아이디를 입력하세요." maxlength="60" required>
+                                            </div>
+                                            <p class="error-txt">입력형식이 올바르지 않습니다.</p>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <span class="tit">비밀번호</span>
+                                            <div class="input-bx">
+                                                <input class="password" type="password" name="userPw" minlength="8" maxlength="16" placeholder="비밀번호(영문,숫자,특수문자 조합 8~16자리)" required>
+                                                <button type="button" class="change-type"></button>
+                                            </div>
+                                            <p class="error-txt">입력형식이 올바르지 않습니다. (영문,숫자,특수문자, 조합 8~16자리)</p>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <!-- E : 입력 폼-->
+                                <!-- S : 입력 값 제출-->
+                                <button type="submit" class="submit-btn btn  btn-red" disabled>로그인</button>
+                                <!-- E : 입력 값 제출-->
+                                <p class="notice-txt">비밀번호 재설정의 경우 <a href="mailto:master@nextrade.co.kr">master@nextrade.co.kr</a>로 문의주세요</p>
+                            </div>
+                        </form>
+                        <p class="copyright">
+                            © 2024. <span>NEXTRADE</span>. All Right Reserved.
+                        </p>
+                    </div>
+                    <!-- E : 로그인 입력란-->
+                    <div class="txt-bx wow fadeInUp">
+                        <img src="/images/sub/login/login_txt.svg" alt="Login">
+                        <p>
+                            신뢰할 수 있는 파트너, <br>
+                            회원사 여러분과 함께합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- E : 메인-->
+
+    <script src="/js/lib/wow.min.js"></script>
+    <script src="/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="/js/lib/swiper.min.js"></script>
+    <script src="/js/lib/jquery.scrollbar.min.js"></script>
+    
+    <!-- 부드러운 스크롤 사용시 주석 해제 -->
+    <script src="/js/lib/SmoothScroll.js"></script>
+    
+    <!-- COMMON -->
+    <script src="/js/common.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('.logout').hide();
+            },100)
+            // 비밀번호 타입 변경
+            $('.change-type').on('click', function() {
+                if ($(this).hasClass('change')) {
+                    $(this).removeClass('change');
+                    $(this).prev('.password').prop('type', 'password');
+                } else {
+                    $(this).addClass('change');
+                    $(this).prev('.password').prop('type', 'text');
+                }
+            });
+
+            // 한글 입력 방지 (비밀번호)
+            $('.password').on('input', function() {
+                var password = $(this).val();
+                var filteredPassword = password.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '');
+                if (password !== filteredPassword) {
+                    $(this).val(filteredPassword);
+                }
+                toggleSubmitButton();  // 비밀번호 입력 변경 시 버튼 활성화 확인
+                removeError($(this));  // 비밀번호 재입력 시 에러 제거
+            });
+
+            // 한글 입력 방지 (이메일)
+            $('.user-id').on('input', function() {
+                var email = $(this).val();
+                var filteredEmail = email.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g, '');
+                if (email !== filteredEmail) {
+                    $(this).val(filteredEmail);
+                }
+                toggleSubmitButton();  // 아이디 입력 변경 시 버튼 활성화 확인
+                removeError($(this));  // 아이디 재입력 시 에러 제거
+            });
+
+            // 아이디 및 비밀번호 입력 체크
+            $('.user-id, .password').on('input', function() {
+                toggleSubmitButton();  // 아이디 및 비밀번호 입력 변경 시 버튼 활성화 확인
+                removeError($(this));  // 입력 값이 다시 변경되면 에러 제거
+            });
+
+            // 제출 버튼 클릭 시 검증
+            $('.submit-btn').on('click', function(event) {
+                var isValid = true;
+
+                // 아이디 검증
+                var emailElement = $('.user-id');
+                if (!emailElement[0].checkValidity()) {
+                    event.preventDefault();
+                    showError(emailElement);  // 이메일 유효성 검증 실패 시 에러 처리
+                    isValid = false;
+                }
+
+                // 비밀번호 검증
+                var passwordElement = $('.password');
+                var password = passwordElement.val();
+                var hasAlphabet = /[A-Za-z]/.test(password);
+                var hasNumber = /\d/.test(password);
+                var hasSpecialChar = /[!@#$%^&*]/.test(password);
+                var isLengthValid = password.length >= 8 && password.length <= 16;
+
+                if (!passwordElement[0].checkValidity() || !isLengthValid || !hasAlphabet || !hasNumber || !hasSpecialChar) {
+                    event.preventDefault();
+                    showError(passwordElement);  // 비밀번호 유효성 검증 실패 시 에러 처리
+                    isValid = false;
+                }
+
+                // 모든 조건이 만족되면 폼 제출
+                if (isValid) {
+                    
+                }
+            });
+
+            // 아이디와 비밀번호 입력 확인 후 로그인 버튼 활성화/비활성화
+            function toggleSubmitButton() {
+                var email = $('.user-id').val();
+                var password = $('.password').val();
+
+                // 이메일과 비밀번호가 모두 입력된 경우에만 버튼 활성화
+                if (email.length > 0 && password.length > 0) {
+                    $('.submit-btn').prop('disabled', false);  // 활성화
+                } else {
+                    $('.submit-btn').prop('disabled', true);  // 비활성화
+                }
+            }
+
+            // 에러 표시 함수
+            function showError(element) {
+                element.addClass('invalid');  // 입력 필드에 invalid 클래스 추가
+                element.closest('label').find('.error-txt').show();  // 에러 메시지 표시
+            }
+
+            // 에러 제거 함수
+            function removeError(element) {
+                element.removeClass('invalid');  // 입력 필드에서 invalid 클래스 제거
+                element.closest('label').find('.error-txt').hide();  // 에러 메시지 숨기기
+            }
+        });
+    </script>
+</body>
+</html>

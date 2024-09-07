@@ -1,11 +1,810 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <!-- ( < IE10 ) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <!-- 사이트 기본설정 영역 START -->
+    <!-- SEO -->
+    <meta name="title" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <!-- 최대 155자 이내 -->
+    <meta name="Robots" content="index, follow" />
+    <!-- 검색 제외 페이지인 경우 noindex, nofollow -->
+
+    <!-- 대표 이미지 -->
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <!-- 파비콘 -->
+    <link rel="canonical" href="/images/favicon.ico" />
+    <!-- 대표 URL -->
+
+    <!-- XEIcon -->
+    <link rel="stylesheet" href="/fonts/icons/xeicon/xeicon.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/common.css?v=1.0" />
+    <link rel="stylesheet" href="/css/main.css?v=1.0" />
+    <link rel="stylesheet" href="/css/breakpoint.css?v=1.0" />
+
+    <link rel="stylesheet" href="/css/ui.jqgrid.css">
+    <!-- Load jQuery -->
+    <script src="/js/lib/jquery-1.7.1.min.js"></script>
+    <script src="/js/include-html.js" defer></script>
+    <!-- Console 화면 노출  -->
+
+    <title>넥스트레이드</title>
+    <script>
+        var P_dp1 = "main"; /*depth1*/
+        var P_dp2 = "main"; /*depth1*/
+    </script>
 </head>
-<body>
-    테스트
+<body class="main-body">
+    <!-- S : 헤더-->
+    <div include-html="/include/header.html"></div>
+    <!-- E : 헤더-->
+    <!-- S : 메인-->
+    <main id="contents">
+        <!-- S : 메인 비주얼-->
+        <section class="section main-visual">
+            <!-- S : 배경 이미지 슬라이드-->
+            <div class="slide-bx slide-1">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture class="img-bx">
+                                <source media="(min-width: 768px)" srcset="images/main/visual_1.jpg">
+                                <source media="(min-width: 0px)" srcset="images/main/visual_1.jpg">
+                                <img src="" alt="INNOVATION">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture class="img-bx">
+                                <source media="(min-width: 768px)" srcset="images/main/visual_2.jpg">
+                                <source media="(min-width: 0px)" srcset="images/main/visual_2.jpg">
+                                <img src="" alt="Flexibility">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture class="img-bx">
+                                <source media="(min-width: 768px)" srcset="images/main/visual_3.jpg">
+                                <source media="(min-width: 0px)" srcset="images/main/visual_1.jpg">
+                                <img src="" alt="Saving">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture class="img-bx">
+                                <source media="(min-width: 768px)" srcset="images/main/visual_4.jpg">
+                                <source media="(min-width: 0px)" srcset="images/main/visual_4.jpg">
+                                <img src="" alt="Efficiency">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- E : 배경 이미지 슬라이드-->
+            <!-- S : 텍스트 슬라이드-->
+            <div class="slide-bx slide-2">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="txt-bx">
+                                <p>Innovation</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="txt-bx">
+                                <p>Flexibility</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="txt-bx">
+                                <p>Saving</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="txt-bx">
+                                <p>Efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- E : 텍스트 슬라이드-->
+            <!-- S : 시장요약 슬라이드-->
+            <div class="slide-bx slide-3">
+                <p class="slide-info wow fadeInUp">
+                    20분 지연된 정보 <span class="ml-5">880 종목기준 수치</span>
+                </p>
+                <div class="slide-wrap">
+                     <!-- S : 슬라이드 이전버튼-->
+                    <button type="button" class="slide-btn slide-prev">
+                        <img src="/images/main/slide_prev.png" alt="이전" class="wow fadeInLeft">
+                    </button>
+                    <!-- E : 슬라이드 이전버튼-->
+                    <div class="swiper-container wow fadeInUp" data-wow-delay="0.1s">
+                        <!--거래대금에는 price 클래스를 추가해서 width가 항상 100%으로 출력되도록 부탁드립니다.-->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="txt-bx">
+                                    <p class="name">프리마켓 <span class="time">08:00~08:50</span></p>
+                                    <ul class="info">
+                                        <li>
+                                            <div class="flex-bx">
+                                                <p class="tit">등락률(기준가대비)</p>
+                                                <p class="num up">+0.32%</p>
+                                            </div>
+                                            <div class="flex-bx price">
+                                                <p class="tit">거래대금(원)</p>
+                                                <p class="num">2,086,798,865</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래종목 수</p>
+                                                <p class="num">430</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래량</p>
+                                                <p class="num">5,115,481</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="txt-bx">
+                                    <p class="name">메인마켓 <span class="time">09:30~15:25</span></p>
+                                    <ul class="info">
+                                        <li>
+                                            <div class="flex-bx">
+                                                <p class="tit">등락률(기준가대비)</p>
+                                                <p class="num up">+0.45%</p>
+                                            </div>
+                                            <div class="flex-bx price">
+                                                <p class="tit">거래대금(원)</p>
+                                                <p class="num">12,086,798,865</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래종목 수</p>
+                                                <p class="num">200</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래량</p>
+                                                <p class="num">3,305,481</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="txt-bx">
+                                    <p class="name">프리마켓 <span class="time">08:00~08:50</span></p>
+                                    <ul class="info">
+                                        <li>
+                                            <div class="flex-bx">
+                                                <p class="tit">등락률(기준가대비)</p>
+                                                <p class="num down">-0.23%</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">등락률(KRS종가대비)</p>
+                                                <p class="num up">+0.23%</p>
+                                            </div>
+                                            <div class="flex-bx price">
+                                                <p class="tit">거래대금(원)</p>
+                                                <p class="num">12,086,798,865</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래종목 수</p>
+                                                <p class="num">200</p>
+                                            </div>
+                                            <div class="flex-bx">
+                                                <p class="tit">거래량</p>
+                                                <p class="num">3,305,481</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- S : 슬라이드 다음버튼-->
+                    <button type="button" class="slide-btn slide-next">
+                        <img src="/images/main/slide_next.png" alt="다음" class="wow fadeInRight">
+                    </button>
+                    <!-- E : 슬라이드 다음버튼-->
+                    <!-- S : 슬라이드 bullets-->
+                    <div class="swiper-pagination"></div>
+                    <!-- E : 슬라이드 bullets-->
+                </div>
+            </div>
+            <!-- E : 시장요약 슬라이드-->
+            <!-- S : ticker-->
+            <div class="ticker">
+                <div class="marquee-wrapper marquee-left-wrapper">
+					<ul>
+                        <!-- S : 상승일 경우 up 클래스 추가 -->
+						<li>
+                            <p class="tit">삼성전자</p>
+                            <p class="num up">+2.35%</p>
+						</li>
+                        <!-- E : 상승일 경우 up 클래스 추가 -->
+                        <!-- S : 하락일 경우 down 클래스 추가-->
+						<li>
+                            <p class="tit">LG에너지솔루션</p>
+                            <p class="num down">-3.26%</p>
+						</li>
+                        <!-- E : 하락일 경우 down 클래스 추가-->
+                        <!-- S : 변동이 없을 경우-->
+                        <li>
+                            <p class="tit">LX인터내셔널</p>
+                            <p class="num">3.26%</p>
+						</li>
+                        <!-- E : 변동이 없을 경우-->
+					</ul>
+				</div>
+            </div>
+            <!-- E : ticker-->
+        </section>
+        <!-- E : 메인 비주얼-->
+        <!-- S : 거래대금상위종목-->
+        <section class="section trade wow fadeInUp">
+            <div class="container">
+                <div class="table-top">
+                    <div class="sec-tit">
+                        <h2 class="tit">거래대금상위종목</h2>
+                        <p class="info">
+                            <img src="/images/icon/icon_clock_gray.svg" alt="시계">20분 지연된 정보입니다. <strong>880</strong> 종목기준 수치
+                        </p>
+                    </div>
+                    <a href="javascript:void(0)" class="link-btn black" onclick="alert('준비중입니다.')">
+                        <span>바로가기</span>
+                    </a>
+                </div>
+                <!-- S : 테이블 영역-->
+                <div class="table-bx">
+                    <table>
+                        <caption><span class="hide">거래대금상위종목</span></caption>
+                        <colgroup>
+                            <col class="col1">
+                            <col class="col2">
+                            <col class="col3">
+                            <col class="col4">
+                            <col class="col5">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">종목명</th>
+                                <th scope="col">상품그룹</th>
+                                <th scope="col">현재가</th>
+                                <th scope="col">등락률</th>
+                                <th scope="col">거래대금</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>3S</span>
+                                </td>
+                                <td>
+                                    <span>KOSDAQ</span>
+                                </td>
+                                <td>
+                                    <span>113,620</span>
+                                    <span class="down mobile-distance">-5.97</span>
+                                </td>
+                                <td>
+                                    <span class="down">-5.97</span>
+                                </td>
+                                <td>
+                                    <span>2,086,798,865</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>3S</span>
+                                </td>
+                                <td>
+                                    <span>KOSDAQ</span>
+                                </td>
+                                <td>
+                                    <span>113,620</span>
+                                    <span class="up mobile-distance">-5.97</span>
+                                </td>
+                                <td>
+                                    <span class="up">-5.97</span>
+                                </td>
+                                <td>
+                                    <span>2,086,798,865</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- E : 테이블 영역-->
+                <div class="stock-list">
+                    <p class="tit">거래참가증권사</p>
+                    <ul>
+                        <li>
+                            <img src="/images/icon/icon_stock_1.png" alt="증권사 1">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_2.png" alt="증권사 2">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_3.png" alt="증권사 3">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_4.png" alt="증권사 4">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_5.png" alt="증권사 5">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_6.png" alt="증권사 6">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_7.png" alt="증권사 7">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_8.png" alt="증권사 8">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_9.png" alt="증권사 9">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_10.png" alt="증권사 10">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_11.png" alt="증권사 11">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_12.png" alt="증권사 12">
+                        </li>
+                        <li>
+                            <img src="/images/icon/icon_stock_13.png" alt="증권사 13">
+                        </li>
+                    </ul>   
+                </div>
+            </div>
+        </section>
+        <!-- E : 거래대금상위종목-->
+        <!-- S : 소개-->
+        <section class="section about wow fadeIn">
+            <div class="container">
+                <div class="inner">
+                    <div class="sec-tit">
+                        <h2 class="tit wow fadeInLeft">새로운 <br class="d-block d-lg-none">증권거래 플랫폼</h2>
+                        <p class="txt wow fadeInLeft" data-wow-delay="0.1s">
+                            금융위원회와 금융감독원이 보증하는 새로운 거래 시스템으로 <br>투자자들에게 안전하고,합리적이고, 빠른 서비스를 제공합니다.
+                        </p>
+                        <a href="javascript:void(0)" class="link-btn black wow fadeInLeft" data-wow-delay="0.2s">
+                            <span>바로가기</span>
+                        </a>
+                    </div>
+                    <div class="slide-bx">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- S : bx-1-->
+                                <div class="swiper-slide">
+                                    <div class="inner">
+                                        <div class="wrap">
+                                            <div class="icon-bx">
+                                                <img src="/images/main/about_1.png" alt="길어진 거래가능 시간">
+                                            </div>
+                                            <div class="txt-bx">
+                                                <strong class="tit">
+                                                    길어진 <br>
+                                                    거래가능 시간
+                                                </strong>
+                                                <p class="txt">
+                                                    이제 하루 12시간 동안 주식을 <br>거래 할 수 있습니다. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- E : bx-1-->
+                                <!-- S : bx-2-->
+                                <div class="swiper-slide">
+                                    <div class="inner">
+                                        <div class="wrap">
+                                            <div class="icon-bx">
+                                                <img src="/images/main/about_2.png" alt="낮아진 수수료">
+                                            </div>
+                                            <div class="txt-bx">
+                                                <strong class="tit">
+                                                    낮아진 수수료
+                                                </strong>
+                                                <p class="txt">
+                                                    넥스트레이드(ATS)는 거래 수수료를 한국거래소(KRX)보다 저렴하게 제공합니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- E : bx-2-->
+                                <!-- S : bx-3-->
+                                <div class="swiper-slide">
+                                    <div class="inner">
+                                        <div class="wrap">
+                                            <div class="icon-bx">
+                                                <img src="/images/main/about_3.png" alt="다양한 주문방식">
+                                            </div>
+                                            <div class="txt-bx">
+                                                <strong class="tit">
+                                                    다양한 주문방식
+                                                </strong>
+                                                <p class="sub-tit">
+                                                    (+) 중간가 호가, 스톱 지정가
+                                                </p>
+                                                <p class="txt">
+                                                    자신의 투자 전략을 더욱 세밀하고 유연하게 조정할 수 있습니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- E : bx-3-->
+                                <!-- S : bx-4-->
+                                <div class="swiper-slide">
+                                    <div class="inner">
+                                        <div class="wrap">
+                                            <div class="icon-bx">
+                                                <img src="/images/main/about_4.png" alt="통합관리 시스템">
+                                            </div>
+                                            <div class="txt-bx">
+                                                <strong class="tit">
+                                                    통합관리 시스템
+                                                </strong>
+                                                <p class="txt">
+                                                    한국거래소(KRX)와 넥스트레이드(ATS)가 협력하여 시장을 통합적으로 관리합니다.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- E : bx-4-->
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- E : 소개-->
+        <!-- S : news-->
+        <section class="section news">
+            <div class="container">
+                <div class="sec-tit">
+                    <h2 class="tit">
+                        <img src="/images/main/nxt_txt.svg" alt="nxt">NEWS
+                    </h2>
+                </div>
+                <div class="list-bx bx-1">
+                    <ul>
+                        <!-- S : 공지사항-->
+                        <li class="wow fadeInUp">
+                            <div class="inner">
+                                <div class="top">
+                                    <!-- 공지사항일 경우 notice 클래스 추가 -->
+                                    <a href="javascript:void(0)" class="category notice">
+                                        <span>공지사항</span>
+                                    </a>
+                                    <p class="date">
+                                        2024.06.12
+                                    </p>
+                                </div>
+                                <a href="javascript:void(0)" onclick="alert('준비중입니다.')" class="link">
+                                    <div class="txt-bx">
+                                        <strong class="tit">
+                                            제목출력영역입니다.제목출력영역입니다.제목출력영역입니다.
+                                        </strong>
+                                        <p class="txt">
+                                            내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.
+                                        </p>
+                                    </div>
+                                    <div class="btn-bx">
+                                        <div class="link-btn black">
+                                            <span>바로가기</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- E : 공지사항-->
+                        <!-- S : 홍보자료-->
+                        <li class="wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="inner">
+                                <div class="top">
+                                    <!-- 홍보자료일 경우 notice 클래스 추가 -->
+                                    <a href="javascript:void(0)" class="category ad">
+                                        <span>공지사항</span>
+                                    </a>
+                                    <p class="date">
+                                        2024.06.12
+                                    </p>
+                                </div>
+                                <a href="javascript:void(0)" onclick="alert('준비중입니다.')" class="link">
+                                    <div class="txt-bx">
+                                        <strong class="tit">
+                                            제목출력영역입니다.제목출력영역입니다.제목출력영역입니다.
+                                        </strong>
+                                        <p class="txt">
+                                            내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.
+                                        </p>
+                                    </div>
+                                    <div class="btn-bx">
+                                        <div class="link-btn black">
+                                            <span>바로가기</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- E : 홍보자료-->
+                        <!-- S : 채용정보-->
+                        <li class="wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="inner">
+                                <div class="top">
+                                    <!-- 채용정보일 경우 notice 클래스 추가 -->
+                                    <a href="" class="category recruit">
+                                        <span>채용정보</span>
+                                    </a>
+                                    <p class="date">
+                                        2024.06.12
+                                    </p>
+                                </div>
+                                <a href="javascript:void(0)" onclick="alert('준비중입니다.')" class="link">
+                                    <div class="txt-bx">
+                                        <strong class="tit">
+                                            제목출력영역입니다.제목출력영역입니다.제목출력영역입니다.
+                                        </strong>
+                                        <p class="txt">
+                                            내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.내용출력영역입니다.
+                                        </p>
+                                    </div>
+                                    <div class="btn-bx">
+                                        <div class="link-btn black">
+                                            <span>바로가기</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- E : 채용정보-->
+                    </ul>
+                </div>
+                <div class="list-bx bx-2">
+                    <ul>
+                        <li class="wow fadeInLeft">
+                            <a href="javascript:void(0)" onclick="alert('준비중입니다.')">
+                                <div class="txt-bx">
+                                    <div class="icon-bx">
+                                        <img src="/images/icon/icon_disclosure.svg" alt="경영공시">
+                                    </div>
+                                    <strong class="tit">
+                                        경영공시
+                                    </strong>
+                                    <p class="txt">
+                                        넥스트레이드의 경영공시 정보를 알려드립니다.
+                                    </p>
+                                </div>
+                                <div class="btn-bx">
+                                    <div class="link-btn white">
+                                        <span>바로가기</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="wow fadeInRight">
+                            <a href="javascript:void(0)" onclick="alert('준비중입니다.')">
+                                <div class="txt-bx">
+                                    <div class="icon-bx">
+                                        <img src="/images/icon/icon_paper.svg" alt="재무정보&IR">
+                                    </div>
+                                    <strong class="tit">
+                                        재무정보&IR
+                                    </strong>
+                                    <p class="txt">
+                                        재무상황, 영업실적 등 넥스트레이드의 정보를 알려드립니다.
+                                    </p>
+                                </div>
+                                <div class="btn-bx">
+                                    <div class="link-btn white">
+                                        <span>바로가기</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- E : news-->
+    </main>
+    <!-- E : 메인-->
+    <!-- S : 푸터-->
+    <div include-html="/include/footer.html"></div>
+    <!-- E : 푸터-->
+    <script src="/js/lib/wow.min.js"></script>
+    <script src="/js/lib/jquery.magnific-popup.min.js"></script>
+    <script src="/js/lib/swiper.min.js"></script>
+    <script src="/js/lib/jquery.scrollbar.min.js"></script>
+    
+    <!-- 부드러운 스크롤 사용시 주석 해제 -->
+    <script src="/js/lib/SmoothScroll.js"></script>
+    
+    <!-- for Board Template-->
+    <script src="/js/custom/clipboard.js"></script>
+    
+    <!-- Custom Library -->
+    <!-- COMMON -->
+    <script src="/js/common.js"></script>
+    <script src="/js/lib/grid.locale-kr.js"></script>
+    <script src="/js/lib/jquery.jqGrid.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            /* 메인 비주얼 슬라이드 */
+            var storySlide1 = new Swiper('.main-visual .slide-1 .swiper-container', {
+                slidesPerView: 1,
+                speed: 1000,
+            });
+
+            /* 메인 비주얼 텍스트 슬라이드 */
+            var storySlide2 = new Swiper('.main-visual .slide-2 .swiper-container', {
+                slidesPerView: 1.2,
+                speed: 1000,
+                centeredSlides: false,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    768: {
+                        centeredSlides: true,
+                    },
+                },
+            });
+
+            // 슬라이드 컨트롤러 설정
+            storySlide1.controller.control = storySlide2;
+            storySlide2.controller.control = storySlide1;
+
+            /* 시장요약 슬라이드 */
+            var marketSlide = new Swiper('.main-visual .slide-3 .swiper-container', {
+                slidesPerView: 1,
+                speed: 1000,
+                navigation: {
+                    nextEl: '.main-visual .slide-3 .slide-next',
+                    prevEl: '.main-visual .slide-3 .slide-prev',
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                    },
+                },
+                pagination: {
+                    el: ".main-visual .slide-3 .swiper-pagination",
+                    clickable: true,    
+                },
+            });
+
+            /*about 슬라이드 1024px를 기준으로 슬라이드 기능 토글*/
+            let aboutSlide;
+
+            const initSwiper = function() {
+                if ($(window).innerWidth() <= 1024 && !aboutSlide) {
+                    aboutSlide = new Swiper('.section.about .slide-bx .swiper-container', {
+                        slidesPerView: 1.2,
+                        spaceBetween: 30,
+                        speed: 1000,
+                        breakpoints: {
+                            576: {
+                                slidesPerView: 2,
+                                spaceBetween: 30,
+                            },
+                            1200: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                        },
+                        pagination: {
+                            el: ".section.about .slide-bx .swiper-pagination",
+                            clickable: true,    
+                        },
+                    });
+                } else if ($(window).innerWidth() > 1024 && aboutSlide) {
+                    aboutSlide.destroy(true, true);
+                    aboutSlide = null;
+                }
+                console.log('test')
+            };
+
+            let resizeTimeout;
+            $(window).on('resize', function() {
+                if (resizeTimeout) clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    initSwiper();
+                }, 200);
+            });
+
+            // 페이지 로드 시 초기화
+            initSwiper();
+
+            function setMarqueeAnimation(wrapperClass, direction) {
+		
+                var marqueeWrap = $("."+wrapperClass+" ul");
+
+                // 이미 복제된 ul이 있는지 확인
+                if ($("."+wrapperClass+" ul").length > 1) {
+                    return; // ul이 이미 복제되었으므로 복제 작업을 다시 하지 않음
+                }
+
+                // 전체 li 요소 계산
+                var marqueeList = $("."+wrapperClass+" ul li");
+                var liCount = marqueeList.length;
+
+                // li의 개수가 적을 경우 최소 10개의 li로 복제
+                var minItems = 10;
+                if (liCount < minItems) {
+                    var additionalItems = minItems - liCount;
+                    for (var i = 0; i < additionalItems; i++) {
+                        var clonedItem = marqueeList.eq(i % liCount).clone();
+                        marqueeWrap.append(clonedItem);
+                    }
+                    marqueeList = $("."+wrapperClass+" ul li"); // 업데이트된 li 목록
+                }
+
+                // ul을 복제하여 뒤에 추가
+                var clonedMarquee = marqueeWrap.clone();
+                marqueeWrap.parent().append(clonedMarquee);
+
+                // 새로운 li count와 total width 계산
+                liCount = marqueeList.length;
+                var liWidth = marqueeList.outerWidth(true); // padding, border, margin 포함
+                var translateWidth = liWidth * liCount; // 총 이동 거리 계산
+
+                // 애니메이션 시간 설정
+                var animationDuration = liCount * 4; // li 개수에 비례하여 애니메이션 시간 조정
+
+                // 애니메이션 방향에 따른 설정
+                var animationName = direction === 'left' ? 'scrolling-left' : 'scrolling-right';
+                var transformStart = direction === 'left' ? '0' : "-"+translateWidth+"px";
+                var transformEnd = direction === 'left' ? "-"+translateWidth+"px" : '0';
+
+                // keyframes 스타일이 중복해서 추가되지 않도록 기존 스타일을 확인
+                if (!$("#"+animationName+"-style").length) {
+                    var style = document.createElement('style');
+                    style.id = animationName+"-style"; // ID를 부여하여 중복 삽입 방지
+                    style.innerHTML = "@keyframes "+animationName+" { 0% { transform: translateX("+transformStart+"); }"+
+                        "100% { transform: translateX("+transformEnd+"); } }";
+                    document.head.appendChild(style);
+                }
+
+                // wrapper에 애니메이션 적용
+                $("."+wrapperClass).css({
+                    'animation': animationName+" "+animationDuration+"s linear infinite"
+                });
+            }
+
+            // 페이지 로드 시 마퀴 설정
+            setMarqueeAnimation('marquee-left-wrapper', 'left');
+            setMarqueeAnimation('marquee-right-wrapper', 'right');
+
+            // 윈도우 리사이즈 시 마퀴 애니메이션 다시 설정
+            $(window).resize(function() {
+                // 리사이즈 시 기존 애니메이션을 지우지 않고 그대로 유지
+                setMarqueeAnimation('marquee-left-wrapper', 'left');
+                setMarqueeAnimation('marquee-right-wrapper', 'right');
+            });
+        });
+    </script>
 </body>
 </html>
